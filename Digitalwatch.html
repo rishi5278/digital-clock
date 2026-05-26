@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 70px;
+            color: black;
+        }
+        h2{
+            text-align: center;
+            font-size: 50px;
+            color: black;
+        }
+     
+        .watch{
+            margin: 50px auto;
+            background-color: rgb(122, 169, 208);
+            border: 5px solid rgb(26, 26, 58);
+            border-radius: 40px;
+            width: 700px;
+            
+            
+        }
+        .screen{
+            background-image: radial-gradient(white,rgb(238, 222, 202));
+            border: 15px solid rgb(19, 19, 100);
+            border-radius: 40px;
+            width: 620px;
+            margin-left: 25px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .item{
+            width: 20px;
+            height: 50px;
+            background-color: black;
+            margin: auto;
+           
+        }
+        .left{
+             transform: skew(-50deg);
+               height: 150px;
+               position: relative;
+               bottom: 50px;
+               right: 170px;
+        }
+        .right{
+                transform: skew(50deg);
+               height: 150px;
+               position: relative;
+               bottom: 200px;
+               left: 170px;
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="watch">
+
+           <div class="screen">
+            <h2>Digital Watch</h2>
+            <h1 id="demo"></h1>
+            <h1 id="demo1"></h1>
+           </div>
+    </div>
+    <div class="stand">
+        <div class="left item"></div>
+        <div class="right item"></div>
+    </div>
+    <script>
+        function clock() {
+            let d = new Date()
+            let h = d.getHours()
+            let m = d.getMinutes()
+            let s = d.getSeconds()
+
+            document.getElementById("demo").innerHTML = h + ":" + m + ":" + s
+            document.getElementById("demo1").innerHTML = d.toDateString()
+        }
+        setInterval(clock,1000)
+    </script>
+</body>
+</html>
